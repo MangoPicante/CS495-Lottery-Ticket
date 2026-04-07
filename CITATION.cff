@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+title: "The Lottery Ticket Hypothesis: Finding Sparse Trainable Networks"
+authors:
+- family-names: Michael
+  given-names: Sean
+date-released: 06-April-2026
+version: 1.0.0
+license: MIT
