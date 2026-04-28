@@ -24,7 +24,7 @@ A comparison between several ternary trained models (BitNet b1.58, weights in {-
 
 ### Phase 1 — Repository Study
 - [ ] Clone and explore the [microsoft/BitNet](https://github.com/microsoft/BitNet) repository, test locally
-- [ ] Read and annotate the BitNet b1.58 paper (Ma et al., 2024)
+- [ ] Read and annotate the [BitNet b1.58 paper (Ma et al., 2024)](https://podcast.aiedus.org/uploads/pdf/pdf-1759573772863-893673714.pdf)
 - [ ] Create a REPORT.md the absmean quantization function and Straight-Through Estimator
 - [ ] Add a summary to REPORT.md of published FP16 baseline results (LLaMA, StableLM) to use as comparison targets
 - [ ] Finalize model sizes to train (e.g. 700M, 1.3B, 3B)
