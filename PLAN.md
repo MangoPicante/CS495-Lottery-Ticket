@@ -23,10 +23,10 @@ A comparison between several ternary trained models (BitNet b1.58, weights in {-
 ## Tasks
 
 ### Phase 1 — Repository Study
-- [ ] Clone and explore the [microsoft/BitNet](https://github.com/microsoft/BitNet) repository
+- [ ] Clone and explore the [microsoft/BitNet](https://github.com/microsoft/BitNet) repository, test locally
 - [ ] Read and annotate the BitNet b1.58 paper (Ma et al., 2024)
-- [ ] Document the absmean quantization function and Straight-Through Estimator
-- [ ] Summarize published FP16 baseline results (LLaMA, StableLM) to use as comparison targets
+- [ ] Create a REPORT.md the absmean quantization function and Straight-Through Estimator
+- [ ] Add a summary to REPORT.md of published FP16 baseline results (LLaMA, StableLM) to use as comparison targets
 - [ ] Finalize model sizes to train (e.g. 700M, 1.3B, 3B)
 
 ### Phase 2 — Baseline Training
@@ -40,7 +40,7 @@ A comparison between several ternary trained models (BitNet b1.58, weights in {-
 - [ ] Train remaining ternary model sizes (scaled up from Phase 2)
 - [ ] Run lm-evaluation-harness on each model (ARC, HellaSwag, WinoGrande, etc.)
 - [ ] Record perplexity on WikiText-2 validation set for each model
-- [ ] Log training time, peak memory, and energy consumption per run
+- [ ] Log training time, peak memory, and energy consumption per run to REPORT.md
 - [ ] Sanity-check results against Table 1 and Table 2 from the BitNet b1.58 paper
 
 ### Phase 4 — Cost Comparison
@@ -48,7 +48,7 @@ A comparison between several ternary trained models (BitNet b1.58, weights in {-
 - [ ] Run `compare_runs.py` to generate loss curves, bar charts, and memory plots
 - [ ] Compute cost-accuracy trade-off (dollar cost proxy: time × hardware rate)
 - [ ] Estimate carbon footprint using CodeCarbon output
-- [ ] Produce final benchmark dashboard (plots + CSV)
+- [ ] In FINAL_REPORT.md, produce final benchmark dashboard (plots + CSV)
 
 ### Phase 5 — Optimization & Writeup
 - [ ] Experiment with at least one optimization (e.g. hybrid precision, quantization schedule)
