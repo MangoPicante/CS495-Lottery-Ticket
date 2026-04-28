@@ -1,0 +1,42 @@
+# BitNet b1.58 — ~700M ternary model (Phase 3)
+# Requires significant CPU time; use gradient_accumulation to fit in RAM.
+# Run: python scripts/training/train.py --config configs/bitnet_b158_700M.yaml
+#
+# Estimated parameters: 24 × (4×1536²  +  3×1536×4096) ≈ 678M  (+77M emb)
+
+model:
+  model_type: bitnet_b158
+  name: bitnet_700M
+  vocab_size: 50257
+  hidden_size: 1536
+  num_layers: 24
+  num_heads: 12
+  ffn_size: 4096
+  max_seq_len: 512
+  dropout: 0.0                  # Drop dropout for large models (LLaMA style)
+  bias: false
+
+dataset:
+  name: wikitext-2
+  tokenizer: gpt2
+
+training:
+  device: cpu
+  dtype: float32
+  seed: 42
+  batch_size: 2
+  gradient_accumulation: 16     # effective batch = 32
+  max_steps: 20000
+  learning_rate: 2.0e-4
+  weight_decay: 0.1
+  beta1: 0.9
+  beta2: 0.95
+  warmup_steps: 1000
+  max_grad_norm: 1.0
+  log_every: 200
+  eval_every: 1000
+  checkpoint_every: 2000
+
+output:
+  dir: results/logs/bitnet_b158_700M
+  checkpoint_dir: results/checkpoints/bitnet_b158_700M

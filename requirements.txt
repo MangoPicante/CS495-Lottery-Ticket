@@ -1,0 +1,20 @@
+# Core ML
+torch>=2.1
+datasets>=2.18
+transformers>=4.38
+
+# Config & I/O
+pyyaml>=6.0
+numpy>=1.26
+
+# Metrics & monitoring
+psutil>=5.9
+matplotlib>=3.8
+
+# Carbon tracking (optional — install separately if needed)
+# codecarbon>=2.3
+
+# Dev / testing
+pytest>=8.0
+ruff>=0.4
+mypy>=1.10

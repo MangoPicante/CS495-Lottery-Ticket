@@ -1,0 +1,42 @@
+# BitNet b1.58 — ~1.3B ternary model (Phase 3)
+# Very long CPU run; intended as a stretch goal or for multi-day training.
+# Run: python scripts/training/train.py --config configs/bitnet_b158_1B3.yaml
+#
+# Estimated parameters: 16 × (4×2048²  +  3×2048×8192) ≈ 1.07B  (+103M emb)
+
+model:
+  model_type: bitnet_b158
+  name: bitnet_1B3
+  vocab_size: 50257
+  hidden_size: 2048
+  num_layers: 16
+  num_heads: 16
+  ffn_size: 8192
+  max_seq_len: 512
+  dropout: 0.0
+  bias: false
+
+dataset:
+  name: wikitext-2
+  tokenizer: gpt2
+
+training:
+  device: cpu
+  dtype: float32
+  seed: 42
+  batch_size: 1
+  gradient_accumulation: 32     # effective batch = 32
+  max_steps: 30000
+  learning_rate: 1.5e-4
+  weight_decay: 0.1
+  beta1: 0.9
+  beta2: 0.95
+  warmup_steps: 1500
+  max_grad_norm: 1.0
+  log_every: 500
+  eval_every: 2000
+  checkpoint_every: 5000
+
+output:
+  dir: results/logs/bitnet_b158_1B3
+  checkpoint_dir: results/checkpoints/bitnet_b158_1B3
